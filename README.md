@@ -1,2 +1,2 @@
-# greenbooks
+# greenBooks
 The gamerest financial calculator!
