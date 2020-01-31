@@ -37,17 +37,26 @@ namespace greenBooks
         String lName { get; set;}
         bankName bn { get; set; }
         accountType acc { get; set; }
-        Bank _bank { get; set; }
+        Banking.Bank _bank { get; set; }
+        String email { get; set; }
         int status=0;
-        int status {get; set;}
 
-        public User(String fName, String lName, int bn, int acc, int principle, int status)
+        public User(String fName, String lName, String email, int bn, int acc, int principle, int status)
         {
             this.fName = fName;
             this.lName = lName;
+            this.email = email;
             this.bn = (bankName)bn;
             this.acc = (accountType)acc;
-            _bank = new Bank(principle,bn);
+            _bank = new Banking.Bank(principle,bn);
+            this.status = status;
+        }
+
+        public int getStatus(){
+            return status;
+        }
+
+        public void setStatus(int status){
             this.status = status;
         }
 
