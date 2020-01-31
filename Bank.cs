@@ -1,51 +1,28 @@
-﻿using System;
+using System;
 namespace Banking
 {
     
     public class Bank
     {
-        SavingsAccount savingsAccount;
-        CheckingAccount checkingAccount;
-        CD certificateOfDeposit;
+        SavingsAccount savings;
+        CheckingAccount checking;
+        CD cD;
+        MoneyMarketAccount moneyMarket;
         BrokerageAccount brokerage;
-        MoneyMarketAccount moneyMarketAccount;
+        
 
-        double SavingsRate;
-        double CheckingRate;
-        double CDRate;
-        double BrokerageRate;
-        double MoneyMarketRate;
-
-
-        public Bank(double principal, int chosenBank) {
-            int a = 1;
-
-           // string bank = (greenBooks.Banks)a;
-
-            switch(chosenBank){
-
-                case 1: int x = 1;
-
-                    break;
-
-            }
-
-
-
-            /*savingsAccount = new SavingsAccount(principal, SavingsRate);
-
-            if (interestChecking){
-                checkingAccount = new CheckingAccount(principal, CheckingRate);
-            }
-            else { checkingAccount = new CheckingAccount(principal, 0); }
-
-            certificateOfDeposit = new CD(principal, CDRate);
-
-            brokerage = new BrokerageAccount(principal, BrokerageRate);
-
-            moneyMarketAccount = new MoneyMarketAccount(principal, MoneyMarketRate);*/
-
+        public Bank(double savInt, double checkInt, double CDInt, double monMarkInt, double brokInt) {
+            savings = new SavingsAccount(0, savInt);
+            checking = new CheckingAccount(0, checkInt);
+            cD = new CD(0, CDInt);
+            moneyMarket = new MoneyMarketAccount(0, monMarkInt);
+            brokerage = new BrokerageAccount(0, brokInt);
         }
+
+
+
+
+
     }
 }
 
