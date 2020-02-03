@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace greenBooks
 {
@@ -27,77 +27,47 @@ namespace greenBooks
 
     class Program
     {
-        
-       
-
+    
         static void Main(string[] args)
         {
-            string a = @"Welcome to GreenBooks, helping you live financially secure and care free.
+            // Welcome Page
+            Console.WriteLine("Welcome");
 
-To begin please input the following information about yourself.";
+            // User Info
 
-            Console.WriteLine(a);
-            Console.WriteLine("\nWhat is your first name?");
-            var firstName = Console.ReadLine();
-            Console.WriteLine("\nWhat is your last name?");
-            var lastName = Console.ReadLine();
-            Console.WriteLine("\nWhat is your email address?");
-            var email = Console.ReadLine();
-
-            User user = new User(firstName, lastName, email);
-
-            a = @"Please select one of the following options by entering the number.
-1=Banking
-2=Budgeting
-3=Investments";
-            Console.WriteLine("\n"+a);
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            if(choice == 1)
+            //Select Option
+            Boolean done = true;
+            do
             {
-                a= @"Please select one of the following banks by entering the number.
+                Console.WriteLine("Please select on of the following options. \n1 = Banking \n2 = Budgeting");
+                int choice = Convert.ToInt32(Console.ReadLine());
 
-1=Bank of America
-2=Chase
-3=Wells Fargo
-4=Rose Bank
-5=Prosperity Bank
-6=Allegiance	
-7=Capital
-8=Ally Bank
-9=One Main Financial
-10=Citi Bank
-11=AIG
-12=Goldman Sachs
-";
-                Console.WriteLine("\n"+a);
-                Console.WriteLine((Banks) Convert.ToInt32(Console.ReadLine()));
+                if (choice == 1) // Banking
+                {
+                 done = true;
 
-                a = @"Please select the type of account you would like to make.
+                    Console.WriteLine("Please select on of the following options. \n1 = Bank of America \n2 = \n3 =  \n4 = \n5 =  \n6 = \n7 =  \n8 = \n9 =  \n10 = \n11 =  \n12 = ");// Select Bank
+                    // Select Account
+                    // User Input Principal
+                    // Create Account
 
-1=Savigns Account
-2=Chechking Account
-3=Money Market Account
-4=Certificate of Deposit
-";
-                Console.WriteLine("\n"+a);
-                Console.WriteLine((AccountType)Convert.ToInt32(Console.ReadLine()));
+                }
+                else if (choice == 2) //Budgeting
+                {
+                    done = true;
+                    
+                }
+                else
+                {
+                    Console.WriteLine("The option you selceted is not valid.");
+                    done = false;
+
+                }
+            } while (!done);
 
 
-               
-                Banking.Bank userBank = new Banking.Bank(0,0);
-                
-            }
-            else if(choice == 2)
-            {
-
-            }
-            else{
-
-            }
 
 
-            
         }
     }
 }
