@@ -17,58 +17,43 @@ namespace greenBooks
         AIG = 11,
         GoldmanSachs = 12
     };
-    enum AccountType
+    enum accountType
     {
-        SavingsAccount = 1,
-        CheckingAccount = 2,
-        MoneyMarketAccount = 3,
-        CD = 4,
-    };
+        checking = 1,
+        savings = 2,
+        moneyMarket = 3,
+        cD = 4,
+        IRA = 5,
+        brokerage = 6
+    }
+
 
     class Program
     {
-    
         static void Main(string[] args)
         {
+            accountType CurrentAccount;
+            int Principle;
+
             // Welcome Page
-            Console.WriteLine("Welcome");
-
+            Console.WriteLine(@"Welcome to greenBooks Financial Calculator:
+By entering some simple information we will give you a full analysis of your individual case
+We will need which bank you want, wheat type of account you want, and your desired principle
+But first lets get your name:/n
+");
             // User Info
-
-            //Select Option
-            Boolean done = true;
-            do
-            {
-                Console.WriteLine("Please select on of the following options. \n1 = Banking \n2 = Budgeting");
-                int choice = Convert.ToInt32(Console.ReadLine());
-
-                if (choice == 1) // Banking
-                {
-                 done = true;
-
-                    Console.WriteLine("Please select on of the following options. \n1 = Bank of America \n2 = \n3 =  \n4 = \n5 =  \n6 = \n7 =  \n8 = \n9 =  \n10 = \n11 =  \n12 = ");// Select Bank
-                    // Select Account
-                    // User Input Principal
-                    // Create Account
-
-                }
-                else if (choice == 2) //Budgeting
-                {
-                    done = true;
-                    
-                }
-                else
-                {
-                    Console.WriteLine("The option you selceted is not valid.");
-                    done = false;
-
-                }
-            } while (!done);
-
-
-
-
+            Console.WriteLine("Enter your first name:");
+            String first=Console.ReadLine();
+            Console.WriteLine("Enter your last name:");
+            String last=Console.ReadLine();
+            // Select Account
+            Console.WriteLine("Please select one of the following options. \n1 = Checking Account \n2 = Savings Account \n3 = Money Marketing Account \n4 = CD \nIRA = 5 \nbrokerage = 6 ");
+            CurrentAccount = (accountType)Convert.ToInt32(Console.ReadLine());
+            // User Input Principal
+            Console.WriteLine("Please enter your principle.");
+            Principle = Convert.ToInt32(Console.ReadLine());
+            // Create Account
+            User user = new User(first,last,(int)CurrentAccount,Principle);
         }
     }
 }
-
