@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace Banking{
     public class Accounts{
 
@@ -49,9 +49,20 @@ namespace Banking{
             return interest + this.principal;
         }
        
+        public double OverallRating(/*add perameters as needed*/)
+        {
+            double result=0;
+            //insert calculation of over all worth rating of this account
+            return result;
+        }
 
-
-    }
+        public double ReturnInvestment(/*add perameters as needed*/)
+        {
+            double result = 0;
+            //insert calculation of return of this account
+            return result;
+        }
+}
 }
 
 
