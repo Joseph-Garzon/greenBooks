@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,41 +25,85 @@ namespace greenBooks
 
         public enum accountType
         {
-            basicChackingAccount=1,
-            savingsAccounts=2,
-            interestBearingCheckingAccount=3,
-            moneyMarketAccount=4,
-            CD=5,
-            IRA=6,
-            brokerageAccount=7
+            checking=1,
+            savings=2,
+            moneyMarket=3,
+            cD=4,
+            brokerage=5
         }
 
+        public List<Banking.Bank> bBanks { get; set; } = new List<Banking.Bank>();
+        //public List<> bestBankAcc = new ArrayList();
         String fName { get; set;}
         String lName { get; set;}
-        bankName bn { get; set; }
         accountType acc { get; set; }
-        Banking.Bank _bank { get; set; }
-        String email { get; set; }
-        int status=0;
+        Banking.Bank BankOfAmerica;
+        Banking.Bank Chase;
+        Banking.Bank WellsFargo;
+        Banking.Bank RoseBank;
+        Banking.Bank ProsperityBank;
+        Banking.Bank Allegiance;
+        Banking.Bank Capital;
+        Banking.Bank AllyBank;
+        Banking.Bank OneMainFinancial;
+        Banking.Bank CitiBank;
+        Banking.Bank AIG;
+        Banking.Bank GoldmanSachs;
 
-        public User(String fName, String lName, String email, int bn, int acc, int principle, int status)
+        public User(String fName, String lName, int acc, int principle)
         {
             this.fName = fName;
             this.lName = lName;
-            this.email = email;
-            this.bn = (bankName)bn;
             this.acc = (accountType)acc;
-            _bank = new Banking.Bank(principle,bn);
-            this.status = status;
+            BankOfAmerica = new Banking.Bank("Bank of America",0,0,0,0,0,principle);
+            Chase = new Banking.Bank("Chase",0,0,0,0,0, principle);
+            WellsFargo = new Banking.Bank("Wells Fargo",0, 0, 0, 0, 0, principle);
+            RoseBank = new Banking.Bank("RoseBank",0, 0, 0, 0, 0, principle);
+            ProsperityBank = new Banking.Bank("Prosperity Bank",0, 0, 0, 0, 0, principle);
+            Allegiance = new Banking.Bank("Allegiance",0, 0, 0, 0, 0, principle);
+            Capital = new Banking.Bank("Capital",0, 0, 0, 0, 0, principle);
+            AllyBank = new Banking.Bank("Ally Bank",0, 0, 0, 0, 0, principle);
+            OneMainFinancial = new Banking.Bank("One Main Financial",0, 0, 0, 0, 0, principle);
+            CitiBank = new Banking.Bank("Citi Bank",0, 0, 0, 0, 0, principle);
+            AIG = new Banking.Bank("AIG",0, 0, 0, 0, 0, principle);
+            GoldmanSachs = new Banking.Bank("GoldmanSachs",0, 0, 0, 0, 0, principle);
+            callAcc();
+            sortBest();
         }
 
-        public int getStatus(){
-            return status;
+        public void callAcc()
+        {
+            bBanks.Clear();
+            bBanks.Add(BankOfAmerica);
+            bBanks.Add(Chase);
+            bBanks.Add(WellsFargo);
+            bBanks.Add(RoseBank);
+            bBanks.Add(ProsperityBank);
+            bBanks.Add(Allegiance);
+            bBanks.Add(Capital);
+            bBanks.Add(AllyBank);
+            bBanks.Add(OneMainFinancial);
+            bBanks.Add(CitiBank);
+            bBanks.Add(AIG);
+            bBanks.Add(GoldmanSachs);
         }
 
-        public void setStatus(int status){
-            this.status = status;
+        public void sortBest()
+        {
+            for (int x=0; x<bBanks.Count;x++ )
+            {
+                for (int y=0; y<bBanks.Count;y++)
+                {
+                    if (bBanks[y].getAccountByType((int)acc).OverallRating()> bBanks[x].getAccountByType((int)acc).OverallRating())
+                    {
+                        var temp = bBanks[y];
+                        bBanks[y]=bBanks[x];
+                        bBanks[x] = temp;
+                        x--;
+                        break;
+                    }
+                }
+            }
         }
-
     }
 }
