@@ -51,14 +51,14 @@ namespace Banking{
        
         public double OverallRating(/*add perameters as needed*/)
         {
-            double result=0;
+            double result = new Random().NextDouble() * 400;
             //insert calculation of over all worth rating of this account
             return result;
         }
 
         public double ReturnInvestment(/*add perameters as needed*/)
         {
-            double result = 0;
+            double result = new Random().NextDouble()*400;
             //insert calculation of return of this account
             return result;
         }
