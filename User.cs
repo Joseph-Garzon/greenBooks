@@ -90,11 +90,11 @@ namespace greenBooks
 
         public void sortBest()
         {
-            for (int x=0; x<bBanks.Count;x++ )
+            for (int x=bBanks.Count-1; x>0;x-- )
             {
-                for (int y=0; y<bBanks.Count;y++)
+                for (int y=0; y<x;y++)
                 {
-                    if (bBanks[y].getAccountByType((int)acc).OverallRating()> bBanks[x].getAccountByType((int)acc).OverallRating())
+                    if (bBanks[y].getAccountByType((int)acc).OverallRating()> bBanks[y+1].getAccountByType((int)acc).OverallRating())
                     {
                         var temp = bBanks[y];
                         bBanks[y]=bBanks[x];
