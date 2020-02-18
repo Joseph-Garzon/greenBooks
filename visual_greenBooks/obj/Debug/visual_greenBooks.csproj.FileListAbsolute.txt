@@ -1,0 +1,16 @@
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\bin\Debug\visual_greenBooks.exe.config
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\bin\Debug\visual_greenBooks.exe
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\bin\Debug\visual_greenBooks.pdb
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.csprojAssemblyReference.cache
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\MainWindow.g.cs
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\App.g.cs
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks_MarkupCompile.cache
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks_MarkupCompile.lref
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\MainWindow.baml
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.g.resources
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.Properties.Resources.resources
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.csproj.GenerateResource.cache
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.exe
+C:\Users\OTHSCS120\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.pdb
+C:\Users\Nasu1\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.exe
+C:\Users\Nasu1\Dropbox\greenBooks\visual_greenBooks\obj\Debug\visual_greenBooks.pdb

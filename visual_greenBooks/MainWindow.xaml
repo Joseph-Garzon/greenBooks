@@ -1,0 +1,33 @@
+﻿<Window x:Class="visual_greenBooks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:visual_greenBooks"
+        mc:Ignorable="d"
+        Title="greenBooks" Height="450" Width="800" Icon="/icons/favicon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="greenBooks" HorizontalAlignment="Right" Height="120" Margin="0,0,221,0" VerticalAlignment="Top" Width="344" FontSize="72" FontFamily="Tw Cen MT" Foreground="LightGreen"/>
+        <TextBlock HorizontalAlignment="Left" Height="76" Margin="49,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="683" FontFamily="Segoe UI Emoji"><Run FontSize="17" FontFamily="Tw Cen MT" Text="Welcome to Visual greenBooks. By entering some simple information we will give you a full analysis of your individual case."/><LineBreak/><Run FontSize="17" FontFamily="Tw Cen MT" Text="We'll need what type of account you want, and your desired principle, but first lets get your name:"/><LineBreak/></TextBlock>
+        <Label Content="First Name:" HorizontalAlignment="Left" Height="37" Margin="49,160,0,0" VerticalAlignment="Top" Width="118" FontSize="22" FontFamily="Tw Cen MT" Foreground="LightGreen" BorderBrush="Black" BorderThickness="1"/>
+        <Label Content="Last Name:" HorizontalAlignment="Left" Height="37" Margin="417,160,0,0" VerticalAlignment="Top" Width="118" FontSize="22" FontFamily="Tw Cen MT" Foreground="LightGreen" BorderBrush="Black" BorderThickness="1"/>
+        <Label Content="Account Type:" HorizontalAlignment="Left" Height="37" Margin="49,202,0,0" VerticalAlignment="Top" Width="135" FontSize="22" FontFamily="Tw Cen MT" Foreground="LightGreen" BorderBrush="Black" BorderThickness="1"/>
+        <Label Content="Principle:" HorizontalAlignment="Left" Height="37" Margin="49,244,0,0" VerticalAlignment="Top" Width="95" FontSize="22" FontFamily="Tw Cen MT" Foreground="LightGreen" BorderBrush="Black" BorderThickness="1"/>
+        <TextBox x:Name="FNBox" HorizontalAlignment="Left" Height="37" Margin="201,160,0,0" TextWrapping="Wrap" Text="Enter FN Here:" VerticalAlignment="Top" Width="169" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="LNBox" HorizontalAlignment="Left" Height="37" Margin="551,160,0,0" TextWrapping="Wrap" Text="Enter LN Here:" VerticalAlignment="Top" Width="169" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="PrinBox" HorizontalAlignment="Left" Height="37" Margin="201,244,0,0" TextWrapping="Wrap" Text="Enter Prin. Here:" VerticalAlignment="Top" Width="169" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <Border CornerRadius="6" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Margin="291,313,269,37">
+            <Button Content="Submit" HorizontalAlignment="Left" Margin="3,0,0,1.5" Width="218" Click="Button_Click" FontFamily="Trebuchet MS" FontSize="20" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Height="58" VerticalAlignment="Bottom"/>
+        </Border>
+        <ComboBox x:Name="AccBox" HorizontalAlignment="Left" Height="37" Margin="201,202,0,0" VerticalAlignment="Top" Width="169" FontSize="16">
+            <ComboBoxItem IsSelected="True">Checking Account</ComboBoxItem>
+            <ComboBoxItem>Savings Account</ComboBoxItem>
+            <ComboBoxItem>Money Market Account</ComboBoxItem>
+            <ComboBoxItem>CD</ComboBoxItem>
+            <ComboBoxItem>Brokerage Account</ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>
