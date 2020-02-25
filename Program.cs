@@ -1,5 +1,9 @@
 using System;
+using System.IO;
+using System.Collections.Generic;
 using System.Collections;
+using Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace greenBooks
 {
@@ -27,13 +31,32 @@ namespace greenBooks
         brokerage = 5
     }
 
-
     class Program
     {
+
         static void Main(string[] args)
         {
             accountType CurrentAccount;
             int Principle;
+
+                List<string> listName = new List<string>();
+                List<string> listA = new List<string>();
+                List<string> listB = new List<string>();
+
+            using (var reader = new StreamReader(@"C:\Users\OTHSCS120\Downloads\FDIC Data-1-1.csv"))
+            {
+                
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    listName.Add(values[0]);
+                    listA.Add(values[5]);
+                    listB.Add(values[6]);
+                }
+            }
+
 
             // Welcome Page
             Console.WriteLine(@"Welcome to greenBooks Financial Calculator:
@@ -56,12 +79,12 @@ But first lets get your name:
             User user = new User(first,last,(int)CurrentAccount,Principle);
             //Show results
             Console.WriteLine("\n\nBased on the information you gave us these are your three best options:");
-            Console.WriteLine(user.bBanks[1].Name+":");
-            Console.Write(user.bBanks[1].getAccountByType((int)CurrentAccount).OverallRating(/*enter perameters if needed*/));
-            Console.WriteLine("\n"+user.bBanks[2].Name + ":");
-            Console.Write(user.bBanks[2].getAccountByType((int)CurrentAccount).OverallRating(/*enter perameters if needed*/));
-            Console.WriteLine("\n"+user.bBanks[3].Name + ":");
-            Console.Write(user.bBanks[3].getAccountByType((int)CurrentAccount).OverallRating(/*enter perameters if needed*/));
+            Console.WriteLine("\n"+listName[1]);
+            Console.WriteLine(listA[1] + "\n");
+            Console.WriteLine("\n" + listName[2]);
+            Console.WriteLine(listA[2]+"\n");
+            Console.WriteLine("\n" + listName[3]);
+            Console.WriteLine(listA[3] + "\n");
         }
     }
 }
