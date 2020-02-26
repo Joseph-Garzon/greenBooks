@@ -2,8 +2,6 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Collections;
-using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace greenBooks
 {
@@ -47,6 +45,11 @@ namespace greenBooks
             List<string> listLoansToAssets = new List<string>();
             List<string> chosenList = new List<string>();
 
+            List<string> AssetGrowth = new List<string>();
+            List<string> NetInterestMargin = new List<string>();
+            List<string> ROA = new List<string>();
+            List<string> LATLoans = new List<string>();
+            List<string> LoansToAssets = new List<string>();
 
 
 
@@ -65,6 +68,13 @@ namespace greenBooks
                     listROA.Add(values[3]);
                     listLATLoans.Add(values[4]);
                     listLoansToAssets.Add(values[5]);
+
+                    AssetGrowth.Add(values[1]);
+                    NetInterestMargin.Add(values[2]);
+                    ROA.Add(values[3]);
+                    LATLoans.Add(values[4]);
+                    LoansToAssets.Add(values[5]);
+
 
                 }
             }
@@ -89,7 +99,8 @@ namespace greenBooks
             listLoansToAssets.Sort();
             listLoansToAssets.Reverse();
 
-            
+
+           
 
 
             // Welcome Page
@@ -116,45 +127,44 @@ But first lets get your name:
                 case 1:
                     chosenList = listAssetGrowth;
                     Console.WriteLine("\n\nBased on the information you gave us these are your three best options:");
-
-                    Console.WriteLine("\n" + listName[1]);
+                    Console.WriteLine("\n" + listName[AssetGrowth.IndexOf(chosenList[0])]);
                     Console.WriteLine("Asset Growth: "+chosenList[0] + "\n");
-                    Console.WriteLine("\n" + listName[2]);
+                    Console.WriteLine("\n" + listName[AssetGrowth.IndexOf(chosenList[1])]);
                     Console.WriteLine("Asset Growth: " + chosenList[1] + "\n");
-                    Console.WriteLine("\n" + listName[3]);
+                    Console.WriteLine("\n" + listName[AssetGrowth.IndexOf(chosenList[2])]);
                     Console.WriteLine("Asset Growth: " + chosenList[2] + "\n");
                     break;
                 case 2:
                     chosenList = listNetInterestMargin;
                     Console.WriteLine("\n\nBased on the information you gave us these are your three best options:");
 
-                    Console.WriteLine("\n" + listName[1]);
+                    Console.WriteLine("\n" + listName[NetInterestMargin.IndexOf(chosenList[0])]);
                     Console.WriteLine("Net Interest Margin: " + chosenList[0] + "\n");
-                    Console.WriteLine("\n" + listName[2]);
+                    Console.WriteLine("\n" + listName[NetInterestMargin.IndexOf(chosenList[1])]);
                     Console.WriteLine("Net Interest Margin: " + chosenList[1] + "\n");
-                    Console.WriteLine("\n" + listName[3]);
+                    Console.WriteLine("\n" + listName[NetInterestMargin.IndexOf(chosenList[2])]);
                     Console.WriteLine("Net Interest Margin: " + chosenList[2] + "\n");
                     break;
                 case 3:
                     chosenList = listROA;
                     Console.WriteLine("\n\nBased on the information you gave us these are your three best options:");
 
-                    Console.WriteLine("\n" + listName[1]);
+                    Console.WriteLine("\n" + listName[ROA.IndexOf(chosenList[0])]);
                     Console.WriteLine("ROA: " + chosenList[0] + "\n");
-                    Console.WriteLine("\n" + listName[2]);
+                    Console.WriteLine("\n" + listName[ROA.IndexOf(chosenList[1])]);
                     Console.WriteLine("ROA: " + chosenList[1] + "\n");
-                    Console.WriteLine("\n" + listName[3]);
+                    Console.WriteLine("\n" + listName[ROA.IndexOf(chosenList[2])]);
                     Console.WriteLine("ROA: " + chosenList[2] + "\n");
                     break;
                 case 4:
                     chosenList = listLATLoans;
                     Console.WriteLine("\n\nBased on the information you gave us these are your three best options:");
 
-                    Console.WriteLine("\n" + listName[1]);
+                    Console.WriteLine("\n" + listName[listLATLoans.IndexOf(chosenList[0]+1)]);
                     Console.WriteLine("Loss Allowance to Loans: " + chosenList[0] + "\n");
-                    Console.WriteLine("\n" + listName[2]);
+                    Console.WriteLine("\n" + listName[listLATLoans.IndexOf(chosenList[1])]);
                     Console.WriteLine("Loss Allowance to Loans: " + chosenList[1] + "\n");
-                    Console.WriteLine("\n" + listName[3]);
+                    Console.WriteLine("\n" + listName[listLATLoans.IndexOf(chosenList[2])]);
                     Console.WriteLine("Loss Allowance to Loans: " + chosenList[2] + "\n");
                     break;
                 case 5:
