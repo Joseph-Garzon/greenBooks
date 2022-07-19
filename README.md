@@ -1,2 +1,2 @@
 # greenBooks
-The gamerest financial calculator!
+The greatest financial calculator!
